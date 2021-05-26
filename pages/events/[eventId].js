@@ -9,12 +9,12 @@ function EventDetailsPage() {
   const eventId = router.query.eventId;
 
   const event = getEventById(eventId);
-  const { image, title, date, location, description } = event;
 
   if (!event) {
     return <p>event not found</p>
   }
 
+  const { image, title, date, location, description } = event;
 
 
   return (
