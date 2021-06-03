@@ -7,7 +7,9 @@ import { getEventById, getAllEvents } from '../../helpers/api-util';
 function EventDetailsPage({ event }) {
 
   if (!event) {
-    return <p>event not found</p>
+    return (<div className='center'>
+      <p>Loading ......</p>
+    </div>)
   }
 
   const { image, title, date, location, description } = event;
@@ -29,7 +31,8 @@ export async function getStaticProps(context) {
   return {
     props: {
       event: event
-    }
+    },
+    revalidate: 30
   }
 
 }
@@ -39,7 +42,7 @@ export async function getStaticPaths() {
   const paths = events.map(event => ({ params: { eventId: event.id } }))
   return {
     paths: paths,
-    fallback: false
+    fallback: true
   }
 
 }
