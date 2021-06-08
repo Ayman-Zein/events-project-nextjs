@@ -1,4 +1,5 @@
 import React from 'react';
+import Head from 'next/head'
 import { getFeaturedEvents } from '../helpers/api-util';
 import EventList from './../components/events/EventList';
 
@@ -7,9 +8,13 @@ function HomePage({ featuredEvents }) {
   //   return <p>no data found</p>
   // }
   return (
-    <div>
+    <>
+      <Head>
+        <title>next events</title>
+        <meta name='description' content='find alot of events' />
+      </Head>
       <EventList events={featuredEvents} />
-    </div>
+    </>
   );
 }
 
