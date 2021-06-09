@@ -1,4 +1,5 @@
 import React from 'react';
+import Head from 'next/head'
 import EventList from '../../components/events/EventList';
 import EventsSearch from '../../components/events/EventsSearch';
 import { getAllEvents } from '../../helpers/api-util';
@@ -12,6 +13,10 @@ function EventsPage({ events }) {
   }
   return (
     <>
+      <Head>
+        <title>all events</title>
+        <meta name='description' content='find alot of events' />
+      </Head>
       <EventsSearch onSearch={onSearchHandler} />
       <EventList events={events} />
     </>

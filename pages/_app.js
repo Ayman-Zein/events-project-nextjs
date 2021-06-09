@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import Router from 'next/router';
+import Head from 'next/head';
 
 import Layout from '../components/layout/Layout'
 import '../styles/globals.css'
@@ -25,9 +26,17 @@ function MyApp({ Component, pageProps }) {
   return (
     <>
       {loading ? (
-        <h1 className='center'>Loading...</h1>
+        <div style={{ height: '100vh', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+          <h1 className='center'>Loading...</h1>
+        </div>
       ) : (
-        <Layout><Component {...pageProps} /></Layout>
+        <Layout>
+          <Head>
+            <title>Next events</title>
+            <meta name='description' content='Events' />
+          </Head>
+          <Component {...pageProps} />
+        </Layout>
       )}
     </>
   )

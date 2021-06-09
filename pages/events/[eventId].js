@@ -1,4 +1,5 @@
-import { useRouter } from 'next/router'
+import { useRouter } from 'next/router';
+import Head from 'next/head';
 import EventContent from '../../components/events/event-details/event-content';
 import EventLogistics from '../../components/events/event-details/event-logistics';
 import EventSummary from '../../components/events/event-details/event-summary';
@@ -17,6 +18,10 @@ function EventDetailsPage({ event }) {
 
   return (
     <>
+      <Head>
+        <title>{title}</title>
+        <meta name='description' content={description} />
+      </Head>
       <EventSummary title={title} />
       <EventLogistics date={date} address={location} image={image} imageAlt={title} />
       <EventContent><p>{description}</p></EventContent>
