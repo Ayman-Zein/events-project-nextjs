@@ -1,5 +1,5 @@
-import { useRouter } from 'next/router';
 import Head from 'next/head';
+
 import EventContent from '../../components/events/event-details/event-content';
 import EventLogistics from '../../components/events/event-details/event-logistics';
 import EventSummary from '../../components/events/event-details/event-summary';

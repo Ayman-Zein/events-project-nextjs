@@ -1,12 +1,10 @@
 import React from 'react';
-import Head from 'next/head'
+import Head from 'next/head';
+
 import { getFeaturedEvents } from '../helpers/api-util';
 import EventList from './../components/events/EventList';
 
 function HomePage({ featuredEvents }) {
-  // if (!featuredEvents) {
-  //   return <p>no data found</p>
-  // }
   return (
     <>
       <Head>
